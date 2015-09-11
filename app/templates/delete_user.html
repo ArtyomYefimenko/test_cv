@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Удаление поьзователя {{ object }}{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center text-info">
+				Пользователь {{ object.firstname }} {{ object.lastname }}
+			</h3>
+            <h3 class="text-center text-danger">
+				Удалить Ваш профиль?
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<form action="{% url "delete_private" pk=user.id %}" role="form" method="post" enctype="multipart/form-data">{% csrf_token %}
+				<table class="table">
+                    <thead>
+                        <tr>
+                            <td class="text-right">
+                                <input type="submit" value="Удалить" class="btn btn-primary"/>
+                            </td>
+                            <td class="text-left">
+                                <a href="/private/{{ user.id }}"><button type="button" class="btn btn-danger">Отмена</button></a>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+			</form>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Регистрация{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center text-success">
+				Регистрация
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<form role="form" method="post" formenctype="multipart/form-data">{% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {% if field.errors %}
+                            <div class="alert alert-warning" role="alert">
+                                {{ field.label }}
+                                {{ field }}{{ field.errors }}
+                            </div>
+                        {% else %}
+                            {{ field.label }}
+                            {{ field }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <input class="btn btn-primary center-block" type="submit" name="submit" value="Зарегистрировать" />
+                <input type="hidden" name="next" value="/" />
+			</form>
+		</div>
+		<div class="col-md-3">
+		</div>
+        <div class="col-md-12">
+        </div>
+	</div>
+</div>
+{% endblock %}

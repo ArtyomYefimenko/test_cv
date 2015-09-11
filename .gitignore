@@ -1,0 +1,10 @@
+app/media/cache
+app/static
+app/.idea
+.env
+*.pyc
+*~
+*.pid
+app/requirements/local.txt
+app/settings_local.py
+app/protect

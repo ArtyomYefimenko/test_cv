@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}Личный кабинет{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center text-info">
+				Контактная информация
+			</h3>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="media well">
+                        {% thumbnail user.avatar "240x320" crop='center' as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="pull-left"/>
+                        {% endthumbnail %}
+						<div class="media-body">
+							<div class="col-md-10">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="success">
+                                            <td>Фамилия:</td>
+                                            <td>{{ user.firstname|title|default:"не заполнено" }}</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>Имя:</td>
+                                            <td>{{ user.lastname|title|default:"не заполнено" }}</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>Логин:</td>
+                                            <td>{{ user.username }}</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>Email:</td>
+                                            <td>{{ user.email }}</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>Дата рождения:</td>
+                                            <td>{{ user.date_of_birth|date:"d.m.Y" }}</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>Мобильный телефон:</td>
+                                            <td>{{ user.phone|default:"не заполнено" }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="col-md-2">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>
+                            <a href="/private/{{ user.id }}/edit/"><button type="button" class="btn btn-success">Редактировать профиль</button></a>
+                        </td>
+                        <td>
+                            <a href="/private/{{ user.id }}/delete/"><button type="button" class="btn btn-danger">Удалить профиль</button></a>
+                        </td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+		</div>
+	</div>
+</div>
+{% endblock %}

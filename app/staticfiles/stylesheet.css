@@ -1,0 +1,18 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  background-color: papayawhip;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.footer p {
+    margin-top: 8px;
+}

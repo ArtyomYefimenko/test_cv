@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Выход{% endblock %}
+
+
+{% block content %}
+<div class="col-md-12">
+    <h3 class="text-center text-danger">
+        Спасибо, что были с нами!
+    </h3>
+</div>
+
+<script>
+    function redirect(){
+       window.location.href = "/";
+    }
+    setTimeout(redirect, 3000); //переход через 3 секунды
+</script>
+{% endblock %}
