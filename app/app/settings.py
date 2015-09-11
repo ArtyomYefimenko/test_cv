@@ -105,8 +105,8 @@ ACCOUNT_ACTIVATION_DAYS = 2
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'art.ef.1991@gmail.com'
-EMAIL_HOST_PASSWORD = 'ef353917000448124ap'
+EMAIL_HOST_USER = 'your email'
+EMAIL_HOST_PASSWORD = 'your password'
 EMAIL_USE_TLS = True
 
 

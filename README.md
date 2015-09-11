@@ -15,6 +15,14 @@
 7) $ ./manage.py runserver
 
 
+In app/settings.py change (your email and password):
+
+
+EMAIL_HOST_USER = 'your email'
+
+EMAIL_HOST_PASSWORD = 'your password'
+
+
 P.S. To install PIL:
 
 sudo apt-get build-dep python-imaging
