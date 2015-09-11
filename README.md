@@ -20,7 +20,7 @@ In app/settings.py change (your email and password):
 
 EMAIL_HOST_USER = 'your email'
 
-EMAIL_HOST_PASSWORD = 'your password'
+EMAIL_HOST_PASSWORD = 'your email (example@gmail.com)'
 
 
 P.S. To install PIL:

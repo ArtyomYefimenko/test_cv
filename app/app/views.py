@@ -169,7 +169,7 @@ class ContactsView(FormView):
 
     def form_valid(self, form):
         subject = form.cleaned_data['subject']
-        to = 'art-tm082@mail.ru'
+        to = settings.EMAIL_HOST_USER
         from_email = "%s <%s>" % (form.cleaned_data['name'], form.cleaned_data['email'])
 
         ctx = {
